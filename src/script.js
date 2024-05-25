@@ -15,15 +15,8 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 // Lights
-const createLightHelper = () => (light, helperType, size) => {
-    const helper = new helperType(light, size)
-    helper.visible = false
-    scene.add(helper)
-    return helper
-}
 const lightsFolder = gui.addFolder('Lights')
 lightsFolder.close()
-
 
 // Ambient light
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
@@ -95,7 +88,7 @@ pointLightFolder.add(pointLight.position, 'z').min(-5).max(5).step(0.01).name('p
 pointLightFolder.add(pointLightHelper, 'visible').name('point light helper visible')
 pointLightFolder.close()
 
-// Helper function to create and add lights
+// Helper function to create and add rectArea lights
 const createRectAreaLight = (color, intensity, width, height, position, lookAt, folderName) => {
     const rectAreaLight = new THREE.RectAreaLight(color, intensity, width, height)
     rectAreaLight.position.set(position.x, position.y, position.z)
