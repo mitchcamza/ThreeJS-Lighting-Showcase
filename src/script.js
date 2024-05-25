@@ -37,10 +37,10 @@ ambientLightFolder.add(ambientLight, 'visible').name('ambient light visible')
 ambientLightFolder.close()
 
 // Directional light
-const directionalLight = new THREE.DirectionalLight(0xffffff, 6.74)
+const directionalLight = new THREE.DirectionalLight(0xffffff, 10)
 directionalLight.visible = true
 scene.add(directionalLight)
-directionalLight.position.set(1, -1.28, 0)
+directionalLight.position.set(1, -0.5, 0)
 const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 0.2)
 directionalLightHelper.visible = false
 scene.add(directionalLightHelper)
@@ -100,7 +100,7 @@ const createRectAreaLight = (color, intensity, width, height, position, lookAt, 
     const rectAreaLight = new THREE.RectAreaLight(color, intensity, width, height)
     rectAreaLight.position.set(position.x, position.y, position.z)
     rectAreaLight.lookAt(lookAt)
-    rectAreaLight.visible = true
+    rectAreaLight.visible = false
     scene.add(rectAreaLight)
 
     const rectAreaLightHelper = new RectAreaLightHelper(rectAreaLight)
@@ -112,7 +112,7 @@ const createRectAreaLight = (color, intensity, width, height, position, lookAt, 
     folder.addColor(rectAreaLight, 'color').name('color')
     folder.add(rectAreaLight, 'width').min(0).max(10).step(0.01).name('width')
     folder.add(rectAreaLight, 'height').min(0).max(10).step(0.01).name('height')
-    folder.add(rectAreaLight, 'visible').name('visible')
+    folder.add(rectAreaLight, 'visible').name('visible').listen()
     folder.add(rectAreaLight.position, 'x').min(-10).max(10).step(0.01).name('x')
     folder.add(rectAreaLight.position, 'y').min(-10).max(10).step(0.01).name('y')
     folder.add(rectAreaLight.position, 'z').min(-10).max(10).step(0.01).name('z')
@@ -123,14 +123,17 @@ const createRectAreaLight = (color, intensity, width, height, position, lookAt, 
 }
 
 // Create RectArea lights using the helper function
-createRectAreaLight(0xff2600, 2.28, 10, 1, { x: -9, y: 0, z: 10 }, new THREE.Vector3(), 'RectArea light 1')
-createRectAreaLight(0x00f900, 2.41, 10, 1, { x: -10, y: 0, z: -8 }, new THREE.Vector3(), 'RectArea light 2')
-createRectAreaLight(0x1300ff, 3.98, 10, 1, { x: 10, y: 0, z: -7 }, new THREE.Vector3(), 'RectArea light 3')
+const rectAreaLight1 = createRectAreaLight(0xff2600, 2.28, 10, 1, { x: -9, y: 0, z: 10 }, new THREE.Vector3(), 'RectArea light 1')
+const rectAreaLight2 = createRectAreaLight(0x00f900, 2.41, 10, 1, { x: -10, y: 0, z: -8 }, new THREE.Vector3(), 'RectArea light 2')
+const rectAreaLight3 = createRectAreaLight(0x1300ff, 3.98, 10, 1, { x: 10, y: 0, z: -7 }, new THREE.Vector3(), 'RectArea light 3')
+rectAreaLight3.visible = true
+
+
 
 // Spot light
 const spotLight = new THREE.SpotLight(0xffffff, 5.0, 2.93, 0.35, 0.3, 0.18)
 spotLight.position.set(0, 2.38, 0.81)
-spotLight.visible = true
+spotLight.visible = false
 scene.add(spotLight)
 spotLight.target.position.set(0.11, 0, 0)
 scene.add(spotLight.target)
