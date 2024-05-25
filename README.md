@@ -49,9 +49,9 @@ Open the project in your web browser at `http://localhost:5173` (or the port spe
 - [OrbitControls](https://threejs.org/docs/#examples/en/controls/OrbitControls) - Control the camera with mouse interactions
 
 ## Screenshots
-<img width="1680" alt="Screenshot 2024-05-25 at 12 17 04" src="https://github.com/mitchcamza/ThreeJS-Lighting-Showcase/assets/63720891/41a9706a-4578-4aef-8270-5f4f3e63919f">
 <img width="1680" alt="Screenshot 2024-05-25 at 12 17 56" src="https://github.com/mitchcamza/ThreeJS-Lighting-Showcase/assets/63720891/4cc9966c-3f9c-4d0b-8f71-39e0e287c99f">
-<img width="1680" alt="Screenshot 2024-05-25 at 12 16 47" src="https://github.com/mitchcamza/ThreeJS-Lighting-Showcase/assets/63720891/9d9ab0c4-b470-4fa4-abc3-307df804143c">
+<img width="1680" alt="Screenshot 2024-05-25 at 14 06 00" src="https://github.com/mitchcamza/ThreeJS-Lighting-Showcase/assets/63720891/bb15d84f-4409-40f5-99b0-01b3df4581c6">
+
 
 
 ## Contributing
